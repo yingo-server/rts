@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO优化设置 -->
+    <title>铁锈战争全汉化版下载 - 秋叶制作 | 第三方备份站</title>
+    <meta name="description" content="铁锈战争全汉化版第三方备份站，提供秋叶制作的完整汉化版本下载，仅供学习交流使用。">
+    <meta name="keywords" content="铁锈战争,铁锈战争汉化,铁锈战争下载,铁锈战争全汉化版,秋叶,铁锈战争安卓版,铁锈战争中文版">
+    <meta name="author" content="yingo">
+    <meta name="robots" content="index, follow">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "铁锈战争全汉化版备份站",
+      "url": "https://rustwar.yingo.com",
+      "description": "铁锈战争全汉化版第三方备份站，提供秋叶制作的完整汉化版本下载。",
+      "author": {
+        "@type": "Person",
+        "name": "yingo"
+      }
+    }
+    </script>
+    
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        /* 布局 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部 */
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        h1 {
+            color: #1e293b;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+        
+        .author {
+            color: #3b82f6;
+            font-weight: 500;
+        }
+        
+        .archive-info {
+            background: #f1f5f9;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px auto 30px;
+            max-width: 800px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        /* 下载区域 */
+        .downloads-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .download-item {
+            background: white;
+            border-radius: 10px;
+            padding: 22px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+        
+        .download-item h3 {
+            color: #1e293b;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .download-item .description {
+            color: #475569;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            min-height: 60px;
+        }
+        
+        .version-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+            text-align: center;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        
+        .download-btn:hover {
+            background: #2563eb;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #94a3b8;
+        }
+        
+        .empty-state h3 {
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        /* 弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-20px);
+            transition: transform 0.3s;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            padding: 24px 30px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .modal-title {
+            color: #1e293b;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .modal-body {
+            padding: 24px 30px;
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+        
+        .modal-text {
+            color: #475569;
+            line-height: 1.7;
+        }
+        
+        .modal-text p {
+            margin-bottom: 16px;
+        }
+        
+        .modal-text ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .modal-text li {
+            margin-bottom: 8px;
+        }
+        
+        .modal-footer {
+            padding: 20px 30px 24px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .modal-btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        .modal-btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .modal-btn-primary:hover {
+            background: #2563eb;
+        }
+        
+        .modal-btn-secondary {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .modal-btn-secondary:hover {
+            background: #dc2626;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .downloads-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 16px;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+            }
+            
+            .modal-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 弹窗 -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">重要声明与使用条款</h3>
+            </div>
+            <div class="modal-body">
+                <div id="modalText" class="modal-text"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="agreeBtn" class="modal-btn modal-btn-primary">同意并继续访问</button>
+                <button id="disagreeBtn" class="modal-btn modal-btn-secondary">不同意，离开本站</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>铁锈战争全汉化版</h1>
+            <p class="subtitle">秋叶制作 | 第三方备份站</p>
+            <p>备份站维护：<span class="author">yingo</span></p>
+            
+            <div class="archive-info">
+                <p>本网站为第三方爱好者建立的备份站，旨在保存秋叶制作的铁锈战争全汉化版。秋叶已停止更新维护，本网站仅提供历史版本备份下载。</p>
+            </div>
+        </header>
+        
+        <section class="downloads-section">
+            <h2 class="section-title">版本下载</h2>
+            <div class="downloads-grid" id="downloadsContainer">
+                <!-- 下载项通过JavaScript动态生成 -->
+            </div>
+            
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <h3>暂无可用下载</h3>
+                <p>当前所有版本正在整理中，请稍后再来查看。</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2025 铁锈战争全汉化版备份站 | 原始汉化：秋叶 | 备份站维护：yingo</p>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: #94a3b8;">本网站仅提供历史版本备份，仅供学习交流使用，请勿用于商业用途。</p>
+        </footer>
+    </div>
+
+    <script>
+        // ========== 弹窗内容配置 ==========
+        // 请在此处填写弹窗内容，如果留空则不显示弹窗
+        const modalTextContent = `本网站不钓鱼、无毒、无恶意代码。由于秋叶制作的铁锈战争汉化版已停止更新维护，本网站由第三方爱好者 yingo 制作，仅用于备份目的。
+
+本网站提供的所有文件均为秋叶原始制作版本，未经任何修改、删减或添加。所有文件均保持原始状态，未注入任何代码或插件。如若其中文件被检测出安全问题，与本站站长无关，请自行承担使用风险。
+
+<strong>法律声明与使用条款：</strong>
+
+1. <strong>版权声明</strong>
+   - 铁锈战争（Rusted Warfare）游戏版权归原始开发者 Corroding Games 所有。
+   - 汉化内容版权归秋叶所有，本网站仅提供备份服务。
+   - 本网站为第三方非营利性备份站，不拥有任何游戏或汉化内容的版权。
+
+2. <strong>使用条款</strong>
+   使用本网站意味着您同意以下条款：
+   - 您已阅读并同意铁锈战争的官方隐私政策和使用条款。
+   - 本网站提供的铁锈战争汉化版仅用于个人学习、研究和交流目的。
+   - 您承诺在下载后24小时内测试使用，并在测试完成后立即删除所有相关文件。
+   - 您不得将本网站提供的文件用于任何商业用途或非法目的。
+   - 您不得对本网站提供的文件进行二次分发、修改或用于制作衍生作品。
+
+3. <strong>免责声明</strong>
+   - 本网站不对文件的可用性、准确性或完整性做出任何保证。
+   - 使用本网站提供的文件所产生的任何风险由用户自行承担。
+   - 本网站不承担因使用或无法使用所提供文件而产生的任何直接或间接损失。
+   - 如因使用本网站提供的文件而违反当地法律法规，责任由用户自行承担。
+
+4. <strong>数据与隐私</strong>
+   - 本网站不收集任何用户个人信息。
+   - 本网站不设置任何追踪代码或分析工具。
+   - 所有下载行为视为用户自愿行为，本网站不记录下载日志。
+
+<strong>特别鸣谢：</strong>
+在此感谢秋叶为铁锈战争中文社区做出的贡献，提供了高质量的汉化版本。
+
+<strong>最后提醒：</strong>
+请支持正版游戏，本备份站仅用于保存历史版本，方便爱好者研究学习。`;
+
+        // ========== 下载项配置 ==========
+        // 请按照以下格式添加下载项，如果没有填写链接，该项将不会显示
+        // 格式：[名称, 描述, 链接, 版本]
+        // 注意：链接为空字符串("")的项将不会显示
+        const downloadItemsConfig = [
+            // 示例格式，请按照此格式填写
+            // ["铁锈战争全汉化版 v1.15", "最新完整汉化版本，包含全部DLC内容，修复了已知的翻译问题，优化了游戏性能。", "https://example.com/rustwar-v1.15.apk", "v1.15"],
+            // ["铁锈战争全汉化版 v1.14", "稳定版本，全面汉化，兼容大部分安卓设备，包含教程完整汉化。", "https://example.com/rustwar-v1.14.apk", "v1.14"],
+            // ["铁锈战争全汉化版 v1.13", "经典版本，体积小巧，运行流畅，适合低配置设备。", "", "v1.13"], // 这个不会显示，因为链接为空
+            
+            // 预留位置 - 可以复制以下行并填写信息
+            ["铁锈战争秋叶汉化", "修复了多人游戏中列表排序逻辑", "Chinese-rts-1.15.APK", "v1.15"],
+            ["铁锈战争秋叶汉化", "1.14支持30人大房间", "Chinese-rts-1.14-30p.apk", "v1.14"],
+            ["铁锈战争秋叶地图", "一个不算全面的秋叶制作的地图合集", "qiuye-map.zip", "请尽量使用最新版"],
+            ["铁锈战争全汉化版 预留位置4", "描述信息待添加。", "", "v0.4"],
+            ["铁锈战争全汉化版 预留位置5", "描述信息待添加。", "", "v0.5"],
+            ["铁锈战争全汉化版 预留位置6", "描述信息待添加。", "", "v0.6"],
+            ["铁锈战争全汉化版 预留位置7", "描述信息待添加。", "", "v0.7"],
+            ["铁锈战争全汉化版 预留位置8", "描述信息待添加。", "", "v0.8"],
+            ["铁锈战争全汉化版 预留位置9", "描述信息待添加。", "", "v0.9"],
+            ["铁锈战争全汉化版 预留位置10", "描述信息待添加。", "", "v0.10"],
+            ["铁锈战争全汉化版 预留位置11", "描述信息待添加。", "", "v0.11"],
+            ["铁锈战争全汉化版 预留位置12", "描述信息待添加。", "", "v0.12"],
+            ["铁锈战争全汉化版 预留位置13", "描述信息待添加。", "", "v0.13"],
+            ["铁锈战争全汉化版 预留位置14", "描述信息待添加。", "", "v0.14"],
+            ["铁锈战争全汉化版 预留位置15", "描述信息待添加。", "", "v0.15"],
+            ["铁锈战争全汉化版 预留位置16", "描述信息待添加。", "", "v0.16"],
+            ["铁锈战争全汉化版 预留位置17", "描述信息待添加。", "", "v0.17"],
+            ["铁锈战争全汉化版 预留位置18", "描述信息待添加。", "", "v0.18"],
+            ["铁锈战争全汉化版 预留位置19", "描述信息待添加。", "", "v0.19"],
+            ["铁锈战争全汉化版 预留位置20", "描述信息待添加。", "", "v0.20"]
+        ];
+
+        // ========== 页面初始化 ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化下载项
+            initDownloadItems();
+            
+            // 初始化弹窗
+            initModal();
+        });
+
+        // ========== 下载项初始化函数 ==========
+        function initDownloadItems() {
+            const downloadsContainer = document.getElementById('downloadsContainer');
+            const emptyState = document.getElementById('emptyState');
+            
+            // 清空容器
+            downloadsContainer.innerHTML = '';
+            
+            let hasVisibleItems = false;
+            
+            // 遍历配置并创建下载项
+            downloadItemsConfig.forEach((item, index) => {
+                const [name, description, link, version] = item;
+                
+                // 只显示有链接的项
+                if (link && link.trim() !== '') {
+                    hasVisibleItems = true;
+                    
+                    const downloadItem = document.createElement('div');
+                    downloadItem.className = 'download-item';
+                    
+                    downloadItem.innerHTML = `
+                        ${version ? `<span class="version-badge">${version}</span>` : ''}
+                        <h3>${name}</h3>
+                        <div class="description">${description}</div>
+                        <a href="${link}" class="download-btn" target="_blank" rel="noopener noreferrer">下载文件</a>
+                    `;
+                    
+                    downloadsContainer.appendChild(downloadItem);
+                }
+            });
+            
+            // 如果没有显示任何下载项，显示空状态
+            if (!hasVisibleItems) {
+                emptyState.style.display = 'block';
+            }
+        }
+
+        // ========== 弹窗初始化函数 ==========
+        function initModal() {
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalText = document.getElementById('modalText');
+            const agreeBtn = document.getElementById('agreeBtn');
+            const disagreeBtn = document.getElementById('disagreeBtn');
+            
+            // 检查是否有弹窗文本内容
+            const hasModalContent = modalTextContent && modalTextContent.trim() !== '';
+            
+            if (hasModalContent) {
+                // 设置弹窗文本内容，将换行符转换为HTML
+                const formattedContent = modalTextContent
+                    .replace(/\n\n/g, '</p><p>')
+                    .replace(/\n/g, '<br>')
+                    .replace(/<strong>(.*?)<\/strong>/g, '<strong>$1</strong>')
+                    .replace(/<ul>/g, '<ul>')
+                    .replace(/<\/ul>/g, '</ul>')
+                    .replace(/\d\.\s<strong>/g, '</p><p><strong>');
+                
+                modalText.innerHTML = `<p>${formattedContent}</p>`;
+                
+                // 3秒后显示弹窗
+                setTimeout(() => {
+                    modalOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 3000);
+                
+                // 同意按钮点击事件
+                agreeBtn.addEventListener('click', function() {
+                    modalOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    // 可以在此处设置cookie，记录用户已同意
+                });
+                
+                // 不同意按钮点击事件
+                disagreeBtn.addEventListener('click', function() {
+                    window.location.href = 'https://www.bing.com';
+                });
+                
+                // 点击背景关闭弹窗
+                modalOverlay.addEventListener('click', function(e) {
+                    if (e.target === modalOverlay) {
+                        modalOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+                
+                // ESC键关闭弹窗
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                        modalOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        }
+
+        // ========== 工具函数：添加下载项 ==========
+        // 如果您想在运行时动态添加下载项，可以使用此函数
+        function addDownloadItem(name, description, link, version) {
+            // 添加到配置数组
+            downloadItemsConfig.push([name, description, link, version]);
+            
+            // 重新初始化下载项
+            initDownloadItems();
+        }
+        
+        // ========== 控制台提示 ==========
+        console.log('铁锈战争全汉化版备份站已加载');
+        console.log('配置说明：');
+        console.log('1. 修改 downloadItemsConfig 数组添加下载项');
+        console.log('2. 修改 modalTextContent 变量更改弹窗内容');
+        console.log('3. 使用 addDownloadItem() 函数可动态添加下载项');
+    </script>
+</body>
+</html>
